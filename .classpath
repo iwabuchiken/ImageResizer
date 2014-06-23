@@ -9,5 +9,6 @@
 	<classpathentry kind="lib" path="libs/java_plotter_1.1.jar"/>
 	<classpathentry kind="lib" path="libs/JavaPlot.jar"/>
 	<classpathentry kind="lib" path="libs/streams-video-0.2.2.jar"/>
+	<classpathentry kind="lib" path="libs/commons-io-2.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

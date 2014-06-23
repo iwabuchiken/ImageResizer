@@ -4,8 +4,12 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.regex.Pattern;
+
+import org.apache.commons.lang.StringUtils;
 
 public class Methods {
 
@@ -116,4 +120,60 @@ public class Methods {
 		
 	}
 
+	public static String 
+	get_Trunk(String string, String marker) {
+		
+		String[] tokens = string.split(Pattern.quote(marker));
+//		String[] tokens = string.split(Pattern.quote(string));
+//		String[] tokens = string.split(string);
+		
+		String message = "string = " + string
+						+ " / "
+						+ "tokens.length = " + tokens.length;
+		String label = "["
+				+ Thread.currentThread().getStackTrace()[1].getFileName()
+				+ " : "
+				+ Thread.currentThread().getStackTrace()[1].getMethodName()
+				+ " : "
+				+ Thread.currentThread().getStackTrace()[1].getLineNumber()
+				+ "]";
+		System.out.println(label + " " + message);
+		
+		
+		// tokens => 1?
+		if (tokens == null || tokens.length < 1) {
+			
+			return string;
+			
+		}
+		
+		// 2?
+		if (tokens.length == 2) {
+			
+			return tokens[0];
+			
+		}
+		
+		for (String s : tokens) {
+			
+			message = "token = " + s;
+			label = "["
+					+ Thread.currentThread().getStackTrace()[1].getFileName()
+					+ " : "
+					+ Thread.currentThread().getStackTrace()[1].getMethodName()
+					+ " : "
+					+ Thread.currentThread().getStackTrace()[1].getLineNumber()
+					+ "]";
+			System.out.println(label + " " + message);
+			
+		}
+		
+		// 3<
+		return StringUtils.join(
+//					Arrays.copyOfRange(tokens, 0, tokens.length - 2), 
+					Arrays.copyOfRange(tokens, 0, tokens.length - 1), 
+					marker);
+		
+		
+	}
 }

@@ -13,6 +13,8 @@ public class CONS {
 		
 		public static final int		NUM_OF_PAIRS	= 4 ; // Number of pairs for mating
 		
+		public static final String dpath_Images = 
+							"C:/WORKS/WS/Eclipse_Kepler/ImageResizer/images";
 	}
 	
 }
