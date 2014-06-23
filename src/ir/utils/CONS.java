@@ -13,8 +13,41 @@ public class CONS {
 		
 		public static final int		NUM_OF_PAIRS	= 4 ; // Number of pairs for mating
 		
-		public static final String dpath_Images = 
-							"C:/WORKS/WS/Eclipse_Kepler/ImageResizer/images";
+		public static enum TimeLabelTypes {
+				SERIAL,			// xxxxxxxx_xxxxxx
+				STANDARD,		// xx/xx/xx xx:xx:xx
+		}
+		
+		public static final String[] param_Keys = {
+			
+					"-size",
+					"-src",
+					"-dst"
+			
+		};
+		
 	}
-	
+
+	public static class Paths {
+		
+		public static final String dpath_Images = 
+				"C:/WORKS/WS/Eclipse_Kepler/ImageResizer/images";
+		
+		public static final String dpath_Log =
+							"C:/WORKS/WS/Eclipse_Kepler/ImageResizer/log";
+		
+		public static final String fname_Log = "log.txt";
+		
+	}
+
+	public static class Main {
+		
+		public static String fpath_Src;		
+		
+		public static String fpath_Dst;
+		
+		public static int[] resizePercent = new int[2];
+		
+	}
+
 }
