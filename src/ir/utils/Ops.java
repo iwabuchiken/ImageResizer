@@ -71,200 +71,17 @@ public class Ops {
 //			"-size",	0
 			if (args[i].equals(CONS.Admin.param_Keys[0])) {
 				
-//				String message = "!args[i + 1].toLowerCase().startsWith(\"c:\") => " 
-//								+ !args[i + 1].toLowerCase().startsWith("c:");
-//				String label = "["
-//						+ Thread.currentThread().getStackTrace()[1]
-//								.getFileName()
-//						+ " : "
-//						+ Thread.currentThread().getStackTrace()[1]
-//								.getMethodName()
-//						+ " : "
-//						+ Thread.currentThread().getStackTrace()[1]
-//								.getLineNumber() + "]";
-//				System.out.println(label + " " + message);
-				
-				//REF regex http://docs.oracle.com/javase/tutorial/essential/regex/test_harness.html
-				String regex = "\\d+,\\d";
-				
-				Pattern p = Pattern.compile(regex);
-				
-//				Matcher m = p.matcher(s);
-				
-				if (i + 1 < len_Arg 
-						&& !args[i + 1].startsWith("-")
-						&& p.matcher(args[i + 1]).find()
-						) {
-					
-					arg_Map.put(CONS.Admin.param_Keys[0], args[i + 1]);
-					
-					i ++;
-					
-				} else if (i + 1 < len_Arg 
-						&& !args[i + 1].startsWith("-")
-						&& !p.matcher(args[i + 1]).find()
-						) {
-					/*
-					 * the format of the value string => doesn't match
-					 */
-					String message = "The size string format doesn't match for: "
-							+ CONS.Admin.param_Keys[0];
-					String label = "["
-							+ Thread.currentThread().getStackTrace()[1]
-									.getFileName()
-							+ " : "
-							+ Thread.currentThread().getStackTrace()[1]
-									.getMethodName()
-							+ " : "
-							+ Thread.currentThread().getStackTrace()[1]
-									.getLineNumber() + "]";
-					System.out.println(label + " " + message);
-					
-					String command_Line = StringUtils.join(args, " ");
-					
-					System.out.println(command_Line);
-					
-					System.exit(-1);
-					
-					
-					
-				} else {
-					
-//					String message = "Value not given for: "
-					String message = "Value not given for: "
-									+ CONS.Admin.param_Keys[0];
-					String label = "["
-							+ Thread.currentThread().getStackTrace()[1]
-									.getFileName()
-							+ " : "
-							+ Thread.currentThread().getStackTrace()[1]
-									.getMethodName()
-							+ " : "
-							+ Thread.currentThread().getStackTrace()[1]
-									.getLineNumber() + "]";
-					System.out.println(label + " " + message);
-					
-					String command_Line = StringUtils.join(args, " ");
-					
-					System.out.println(command_Line);
-					
-					System.exit(-1);
-//					return null;
-					
-				}
+				i = Ops.get_ArgMap__Size(args, i, len_Arg, arg_Map);
 			
-//				"-src",		1
+//			"-src",		1
 			} else if (args[i].equals(CONS.Admin.param_Keys[1])) {
 				
-//				if (i + 1 < len_Arg) {
-				if (i + 1 < len_Arg 
-						&& !args[i + 1].startsWith("-")
-						//REF lower case http://stackoverflow.com/questions/19154117/startswith-method-of-string-ignoring-case answered Oct 3 '13 at 8:19
-						&& args[i + 1].toLowerCase().startsWith("c:")) {
-					
-					arg_Map.put(CONS.Admin.param_Keys[1], args[i + 1]);
-					
-					i ++;
-					
-					String message = "'-src' option => given";
-					String label = "["
-							+ Thread.currentThread().getStackTrace()[1]
-									.getFileName()
-							+ " : "
-							+ Thread.currentThread().getStackTrace()[1]
-									.getMethodName()
-							+ " : "
-							+ Thread.currentThread().getStackTrace()[1]
-									.getLineNumber() + "]";
-					System.out.println(label + " " + message);
-					
-					
-				} else if (i + 1 < len_Arg 
-						&& !args[i + 1].startsWith("-")
-						&& !args[i + 1].toLowerCase().startsWith("c:")) {
-					/*
-					 * args => "-src images\..."
-					 * 	=> needs to be "-src C:\WORKS\..."
-					 */
-					String message = "source file needs to be of a full path: "
-//							String message = "source file needs to be of a full path: "
-							+ CONS.Admin.param_Keys[1];
-					String label = "["
-							+ Thread.currentThread().getStackTrace()[1]
-									.getFileName()
-							+ " : "
-							+ Thread.currentThread().getStackTrace()[1]
-									.getMethodName()
-							+ " : "
-							+ Thread.currentThread().getStackTrace()[1]
-									.getLineNumber() + "]";
-					System.out.println(label + " " + message);
-					
-					String command_Line = StringUtils.join(args, " ");
-					
-					System.out.println(command_Line);
-					
-					System.exit(-1);
-					
-				} else {
-					
-					String message = "Value not given for: "
-									+ CONS.Admin.param_Keys[1];
-					String label = "["
-							+ Thread.currentThread().getStackTrace()[1]
-									.getFileName()
-							+ " : "
-							+ Thread.currentThread().getStackTrace()[1]
-									.getMethodName()
-							+ " : "
-							+ Thread.currentThread().getStackTrace()[1]
-									.getLineNumber() + "]";
-					System.out.println(label + " " + message);
-					
-					String command_Line = StringUtils.join(args, " ");
-					
-					System.out.println(command_Line);
-					
-					System.exit(-1);
-					
-//					return null;
-					
-				}
+				i = Ops.get_ArgMap__Src(args, i, len_Arg, arg_Map);
 				
-//				"-dst"		2
+//			"-dst"		2
 			} else if (args[i].equals(CONS.Admin.param_Keys[2])) {
 				
-//				if (i + 1 < len_Arg) {
-				if (i + 1 < len_Arg && !args[i + 1].startsWith("-")) {
-					
-					arg_Map.put(CONS.Admin.param_Keys[2], args[i + 1]);
-					
-					i ++;
-					
-				} else {
-					
-					String message = "Value not given for: "
-									+ CONS.Admin.param_Keys[2];
-					String label = "["
-							+ Thread.currentThread().getStackTrace()[1]
-									.getFileName()
-							+ " : "
-							+ Thread.currentThread().getStackTrace()[1]
-									.getMethodName()
-							+ " : "
-							+ Thread.currentThread().getStackTrace()[1]
-									.getLineNumber() + "]";
-					System.out.println(label + " " + message);
-					
-					String command_Line = StringUtils.join(args, " ");
-					
-					System.out.println(command_Line);
-					
-					System.exit(-1);
-					
-//					return null;
-					
-				}
+				i = Ops.get_ArgMap__Dst(args, i, len_Arg, arg_Map);
 				
 			} else {
 				
@@ -274,10 +91,213 @@ public class Ops {
 			
 		}//for (int i = 0; i < len_Arg; i++)
 		
-		
 		return arg_Map;
 		
 	}//get_Options(String[] args)
+
+	private static int 
+	get_ArgMap__Dst
+	(String[] args, int i, int len_Arg,
+			HashMap<String, String> arg_Map) {
+		// TODO Auto-generated method stub
+//		if (i + 1 < len_Arg) {
+		if (i + 1 < len_Arg && !args[i + 1].startsWith("-")) {
+			
+			arg_Map.put(CONS.Admin.param_Keys[2], args[i + 1]);
+			
+			i ++;
+			
+		} else {
+			
+			String message = "Value not given for: "
+							+ CONS.Admin.param_Keys[2];
+			String label = "["
+					+ Thread.currentThread().getStackTrace()[1]
+							.getFileName()
+					+ " : "
+					+ Thread.currentThread().getStackTrace()[1]
+							.getMethodName()
+					+ " : "
+					+ Thread.currentThread().getStackTrace()[1]
+							.getLineNumber() + "]";
+			System.out.println(label + " " + message);
+			
+			String command_Line = StringUtils.join(args, " ");
+			
+			System.out.println(command_Line);
+			
+			System.exit(-1);
+			
+//			return null;
+			
+		}
+		
+		return i;
+		
+	}//get_ArgMap__Dst
+	
+
+	private static int 
+	get_ArgMap__Src
+	(String[] args, int i, int len_Arg,
+			HashMap<String, String> arg_Map) {
+		// TODO Auto-generated method stub
+//		if (i + 1 < len_Arg) {
+		if (i + 1 < len_Arg 
+				&& !args[i + 1].startsWith("-")
+				//REF lower case http://stackoverflow.com/questions/19154117/startswith-method-of-string-ignoring-case answered Oct 3 '13 at 8:19
+				&& args[i + 1].toLowerCase().startsWith("c:")) {
+			
+			arg_Map.put(CONS.Admin.param_Keys[1], args[i + 1]);
+			
+			i ++;
+			
+			String message = "'-src' option => given";
+			String label = "["
+					+ Thread.currentThread().getStackTrace()[1]
+							.getFileName()
+					+ " : "
+					+ Thread.currentThread().getStackTrace()[1]
+							.getMethodName()
+					+ " : "
+					+ Thread.currentThread().getStackTrace()[1]
+							.getLineNumber() + "]";
+			System.out.println(label + " " + message);
+			
+			
+		} else if (i + 1 < len_Arg 
+				&& !args[i + 1].startsWith("-")
+				&& !args[i + 1].toLowerCase().startsWith("c:")) {
+			/*
+			 * args => "-src images\..."
+			 * 	=> needs to be "-src C:\WORKS\..."
+			 */
+			String message = "source file needs to be of a full path: "
+//					String message = "source file needs to be of a full path: "
+					+ CONS.Admin.param_Keys[1];
+			String label = "["
+					+ Thread.currentThread().getStackTrace()[1]
+							.getFileName()
+					+ " : "
+					+ Thread.currentThread().getStackTrace()[1]
+							.getMethodName()
+					+ " : "
+					+ Thread.currentThread().getStackTrace()[1]
+							.getLineNumber() + "]";
+			System.out.println(label + " " + message);
+			
+			String command_Line = StringUtils.join(args, " ");
+			
+			System.out.println(command_Line);
+			
+			System.exit(-1);
+			
+		} else {
+			
+			String message = "Value not given for: "
+							+ CONS.Admin.param_Keys[1];
+			String label = "["
+					+ Thread.currentThread().getStackTrace()[1]
+							.getFileName()
+					+ " : "
+					+ Thread.currentThread().getStackTrace()[1]
+							.getMethodName()
+					+ " : "
+					+ Thread.currentThread().getStackTrace()[1]
+							.getLineNumber() + "]";
+			System.out.println(label + " " + message);
+			
+			String command_Line = StringUtils.join(args, " ");
+			
+			System.out.println(command_Line);
+			
+			System.exit(-1);
+			
+//			return null;
+			
+		}
+		
+		return i;
+		
+	}//get_ArgMap__Src
+
+	private static int 
+	get_ArgMap__Size
+	(String[] args, int i, int len_Arg, 
+			HashMap<String, String> arg_Map) {
+		// TODO Auto-generated method stub
+		//REF regex http://docs.oracle.com/javase/tutorial/essential/regex/test_harness.html
+		String regex = "\\d+,\\d";
+		
+		Pattern p = Pattern.compile(regex);
+		
+//		Matcher m = p.matcher(s);
+		
+		if (i + 1 < len_Arg 
+				&& !args[i + 1].startsWith("-")
+				&& p.matcher(args[i + 1]).find()
+				) {
+			
+			arg_Map.put(CONS.Admin.param_Keys[0], args[i + 1]);
+			
+			i ++;
+			
+		} else if (i + 1 < len_Arg 
+				&& !args[i + 1].startsWith("-")
+				&& !p.matcher(args[i + 1]).find()
+				) {
+			/*
+			 * the format of the value string => doesn't match
+			 */
+			String message = "The size string format doesn't match for: "
+					+ CONS.Admin.param_Keys[0];
+			String label = "["
+					+ Thread.currentThread().getStackTrace()[1]
+							.getFileName()
+					+ " : "
+					+ Thread.currentThread().getStackTrace()[1]
+							.getMethodName()
+					+ " : "
+					+ Thread.currentThread().getStackTrace()[1]
+							.getLineNumber() + "]";
+			System.out.println(label + " " + message);
+			
+			String command_Line = StringUtils.join(args, " ");
+			
+			System.out.println(command_Line);
+			
+			System.exit(-1);
+			
+			
+			
+		} else {
+			
+//			String message = "Value not given for: "
+			String message = "Value not given for: "
+							+ CONS.Admin.param_Keys[0];
+			String label = "["
+					+ Thread.currentThread().getStackTrace()[1]
+							.getFileName()
+					+ " : "
+					+ Thread.currentThread().getStackTrace()[1]
+							.getMethodName()
+					+ " : "
+					+ Thread.currentThread().getStackTrace()[1]
+							.getLineNumber() + "]";
+			System.out.println(label + " " + message);
+			
+			String command_Line = StringUtils.join(args, " ");
+			
+			System.out.println(command_Line);
+			
+			System.exit(-1);
+//			return null;
+			
+		}
+		
+		return i;
+		
+	}//get_ArgMap__Size()
 
 	public static void 
 	set_OptVals_Dflt() {
@@ -428,6 +448,13 @@ public class Ops {
 		
 		////////////////////////////////
 		set_OptVals__Size(arg_Map);
+		
+		////////////////////////////////
+		
+		// -dst
+		
+		////////////////////////////////
+//		set_OptVals__Dst(arg_Map);
 		
 		
 		
