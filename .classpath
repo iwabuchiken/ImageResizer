@@ -10,5 +10,6 @@
 	<classpathentry kind="lib" path="libs/JavaPlot.jar"/>
 	<classpathentry kind="lib" path="libs/streams-video-0.2.2.jar"/>
 	<classpathentry kind="lib" path="libs/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="libs/jansi-1.11.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

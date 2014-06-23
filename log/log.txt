@@ -13,3 +13,81 @@
 [2014/06/23 15:34:54][Main.java : 54] 
 [2014/06/23 15:35:47][Main.java : 54] 
 [2014/06/23 15:39:07][Main.java : 54] 
+[2014/06/23 15:43:07][Main.java : 55] 
+[2014/06/23 15:48:30][Main.java : 55] 
+[2014/06/23 15:48:46][Main.java : 55] 
+[2014/06/23 15:49:05][Main.java : 55] -size 100,100
+[2014/06/23 15:49:13][Main.java : 55] -size -src
+[2014/06/23 15:50:02][Main.java : 55] -size -src
+[2014/06/23 15:51:07][Main.java : 55] 
+[2014/06/23 15:51:12][Main.java : 55] -size -src
+[2014/06/23 15:51:32][Main.java : 55] 
+[2014/06/23 15:51:36][Main.java : 55] -size -src
+[2014/06/23 15:51:48][Main.java : 55] 
+[2014/06/23 15:56:41][Main.java : 55] -size 20,20 -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png
+[2014/06/23 15:57:12][Main.java : 55] 
+[2014/06/23 15:57:16][Main.java : 55] -size 20,20 -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png
+[2014/06/23 16:20:39][Main.java : 55] 
+[2014/06/23 16:20:48][Main.java : 55] 
+[2014/06/23 16:22:35][Main.java : 55] 
+[2014/06/23 16:23:52][Main.java : 55] 
+[2014/06/23 16:24:27][Main.java : 55] 
+[2014/06/23 16:24:37][Main.java : 55] 
+[2014/06/23 20:27:01][Main.java : 57] 
+[2014/06/23 20:27:50][Main.java : 57] 
+[2014/06/23 20:28:44][Main.java : 57] -src images\200px-Lactose.svg.png
+[2014/06/23 20:31:11][Main.java : 57] 
+[2014/06/23 20:31:18][Main.java : 57] -src images\200px-Lactose.svg.png
+[2014/06/23 20:32:23][Main.java : 57] -src images\200px-Lactose.svg.png abc
+[2014/06/23 20:33:28][Main.java : 57] 
+[2014/06/23 20:33:32][Main.java : 57] -src images\200px-Lactose.svg.png abc
+[2014/06/23 20:37:22][Main.java : 57] 
+[2014/06/23 20:37:31][Main.java : 57] -src images\200px-Lactose.svg.png abc
+[2014/06/23 20:46:32][Main.java : 57] 
+[2014/06/23 20:47:04][Main.java : 57] 
+[2014/06/23 20:47:10][Main.java : 57] -src images\200px-Lactose.svg.png abc
+[2014/06/23 20:47:33][Main.java : 57] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png
+[2014/06/23 20:47:54][Main.java : 57] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png
+[2014/06/23 20:48:03][Main.java : 57] 
+[2014/06/23 20:48:49][Main.java : 57] 
+[2014/06/23 20:48:57][Main.java : 57] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png
+[2014/06/23 20:49:40][Main.java : 57] 
+[2014/06/23 20:49:43][Main.java : 57] -src images\200px-Lactose.svg.png abc
+[2014/06/23 20:49:53][Main.java : 57] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png
+[2014/06/23 20:51:06][Main.java : 57] 
+[2014/06/23 20:51:09][Main.java : 57] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png
+[2014/06/23 20:51:48][Main.java : 57] 
+[2014/06/23 20:51:56][Main.java : 57] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png
+[2014/06/23 20:52:12][Main.java : 57] 
+[2014/06/23 20:52:19][Main.java : 57] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png
+[2014/06/23 20:58:51][Main.java : 89] 
+[2014/06/23 20:59:10][Main.java : 90] 
+[2014/06/23 21:01:04][Main.java : 90] 
+[2014/06/23 21:01:09][Main.java : 90] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png
+[2014/06/23 21:01:30][Main.java : 90] -src images -size 20,20
+[2014/06/23 21:01:52][Main.java : 90] 
+[2014/06/23 21:01:57][Main.java : 90] -src images -size 20,20
+[2014/06/23 21:02:35][Main.java : 90] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png -size 20,20
+[2014/06/23 21:02:45][Main.java : 90] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png -size 20+20
+[2014/06/23 21:04:28][Main.java : 90] 
+[2014/06/23 21:04:32][Main.java : 90] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png -size 20+20
+[2014/06/23 21:10:27][Main.java : 100] 
+[2014/06/23 21:10:32][Main.java : 100] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png -size 20+20
+[2014/06/23 21:10:40][Main.java : 100] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png -size 20,20
+[2014/06/23 21:13:17][Main.java : 101] 
+[2014/06/23 21:13:22][Main.java : 101] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png -size 20,20
+[2014/06/23 21:13:34][Main.java : 101] 
+[2014/06/23 21:13:37][Main.java : 101] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png -size 20,20
+[2014/06/23 21:14:19][Main.java : 101] 
+[2014/06/23 21:14:23][Main.java : 101] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png -size 20,20
+[2014/06/23 21:15:11][Main.java : 101] 
+[2014/06/23 21:15:14][Main.java : 101] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png -size 20,20
+[2014/06/23 21:15:51][Main.java : 101] 
+[2014/06/23 21:15:53][Main.java : 101] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png -size 20,20
+[2014/06/23 21:21:49][Main.java : 101] 
+[2014/06/23 21:21:54][Main.java : 101] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png -size 20,20
+[2014/06/23 21:23:45][Main.java : 101] 
+[2014/06/23 21:23:49][Main.java : 101] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png -size 20,20
+[2014/06/23 21:24:52][Main.java : 101] 
+[2014/06/23 21:24:55][Main.java : 101] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png -size 20,20
+[2014/06/23 21:24:59][Main.java : 101] 

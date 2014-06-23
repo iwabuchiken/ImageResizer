@@ -10,12 +10,18 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.imageio.ImageIO;
 
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang.StringUtils;
+
+import org.fusesource.jansi.AnsiConsole;
+import static org.fusesource.jansi.Ansi.*;
+import static org.fusesource.jansi.Ansi.Color.*;
 
 public class Main {
 
@@ -24,7 +30,12 @@ public class Main {
 
 		_Setup(args);
 		
-		resize(args);
+		_Setup_OptVals(args);
+		
+//		_test_SizeRegex();
+		
+		
+//		resize(args);
 		
 //		_test();
 		
@@ -39,6 +50,42 @@ public class Main {
 				+ Thread.currentThread().getStackTrace()[1].getLineNumber()
 				+ "]";
 		System.out.println(label + " " + message);
+		
+//		AnsiConsole.systemInstall();
+//
+//	    System.out.println(ansi().fg(GREEN).a("Hello World").reset());
+////	    System.out.println(ansi().fg(RED).a("Hello World").reset());
+//	    System.out.println("My Name is Raman");
+//
+//	    AnsiConsole.systemUninstall();
+		
+	}
+
+	private static void _test_SizeRegex() {
+		// TODO Auto-generated method stub
+		String s = "100 20";
+//		String s = "100,20";
+		
+		String regex = "\\d+,\\d";
+		
+		Pattern p = Pattern.compile(regex);
+		
+		Matcher m = p.matcher(s);
+		
+		String message = "m.find() => " + m.find()
+					+ " / "
+					+ "s = " + s
+					+ " / "
+					+ "regex = " + regex;
+		String label = "["
+				+ Thread.currentThread().getStackTrace()[1].getFileName()
+				+ " : "
+				+ Thread.currentThread().getStackTrace()[1].getMethodName()
+				+ " : "
+				+ Thread.currentThread().getStackTrace()[1].getLineNumber()
+				+ "]";
+		System.out.println(label + " " + message);
+		
 		
 		
 	}
@@ -207,7 +254,8 @@ public class Main {
 		}
 	}
 	
-	private static void resize(String[] args) {
+	private static void 
+	_Setup_OptVals(String[] args) {
 		
 		////////////////////////////////
 
@@ -216,7 +264,139 @@ public class Main {
 		////////////////////////////////
 		HashMap<String, String> arg_Map = 
 							Ops.get_ArgMap(args);
+		
+		if (arg_Map == null) {
+			
+			String message = "arg_Map => null";
+			String label = "["
+					+ Thread.currentThread().getStackTrace()[1].getFileName()
+					+ " : "
+					+ Thread.currentThread().getStackTrace()[1].getMethodName()
+					+ " : "
+					+ Thread.currentThread().getStackTrace()[1].getLineNumber()
+					+ "]";
+			System.out.println(label + " " + message);
+			
+		}
+		
+		////////////////////////////////
 
+		// set: option values
+
+		////////////////////////////////
+		if (arg_Map == null) {
+			
+			String message = "arg_Map => null";
+			String label = "["
+					+ Thread.currentThread().getStackTrace()[1].getFileName()
+					+ " : "
+					+ Thread.currentThread().getStackTrace()[1].getMethodName()
+					+ " : "
+					+ Thread.currentThread().getStackTrace()[1].getLineNumber()
+					+ "]";
+			System.out.println(label + " " + message);
+			
+			Ops.set_OptVals_Dflt();
+			
+		} else {
+
+			String message = "arg_Map => not null";
+			String label = "["
+					+ Thread.currentThread().getStackTrace()[1].getFileName()
+					+ " : "
+					+ Thread.currentThread().getStackTrace()[1].getMethodName()
+					+ " : "
+					+ Thread.currentThread().getStackTrace()[1].getLineNumber()
+					+ "]";
+			System.out.println(label + " " + message);
+
+			Ops.set_OptVals(arg_Map);
+			
+		}
+		
+		////////////////////////////////
+
+		// report
+
+		////////////////////////////////
+		_Setup_OptVals__Report();
+		
+	}//_Setup_OptVals(String[] args)
+	
+	private static void 
+	_Setup_OptVals__Report() {
+		// TODO Auto-generated method stub
+		AnsiConsole.systemInstall();
+
+//	    System.out.println(ansi().fg(GREEN).a("Hello World").reset());
+		
+		////////////////////////////////
+
+		// src
+
+		////////////////////////////////
+		String message = "CONS.Main.fpath_Src: set to => " + CONS.Main.fpath_Src;
+		String label = "["
+				+ Thread.currentThread().getStackTrace()[1].getFileName()
+				+ " : "
+				+ Thread.currentThread().getStackTrace()[1].getMethodName()
+				+ " : "
+				+ Thread.currentThread().getStackTrace()[1].getLineNumber()
+				+ "]";
+		System.out.print(label);
+		System.out.println(ansi().fg(GREEN).a(" " + message).reset());
+
+		////////////////////////////////
+
+		// size
+
+		////////////////////////////////
+		message = String.format("size set to => %d, %d", 
+						CONS.Main.resizePercent[0], 
+						CONS.Main.resizePercent[1]);
+		label = "["
+				+ Thread.currentThread().getStackTrace()[1].getFileName()
+				+ " : "
+				+ Thread.currentThread().getStackTrace()[1].getMethodName()
+				+ " : "
+				+ Thread.currentThread().getStackTrace()[1].getLineNumber()
+				+ "]";
+		System.out.print(label);
+		System.out.println(ansi().fg(GREEN).a(" " + message).reset());
+
+		////////////////////////////////
+
+		// dst
+
+		////////////////////////////////
+		message = String.format("dst set to => %s", 
+				CONS.Main.fpath_Dst);
+		label = "["
+				+ Thread.currentThread().getStackTrace()[1].getFileName()
+				+ " : "
+				+ Thread.currentThread().getStackTrace()[1].getMethodName()
+				+ " : "
+				+ Thread.currentThread().getStackTrace()[1].getLineNumber()
+				+ "]";
+		System.out.print(label);
+		System.out.println(ansi().fg(GREEN).a(" " + message).reset());
+		
+//		CONS.Main.fpath_Dst
+		
+	    AnsiConsole.systemUninstall();
+
+	}//_Setup_OptVals__Report()
+
+	private static void resize(String[] args) {
+		
+		////////////////////////////////
+		
+		// get: options
+		
+		////////////////////////////////
+		HashMap<String, String> arg_Map = 
+				Ops.get_ArgMap(args);
+		
 		if (arg_Map == null) {
 			
 			String message = "arg_Map => null";
@@ -232,6 +412,37 @@ public class Main {
 //			System.exit(-1);
 //			
 		}
+		
+		////////////////////////////////
+		
+		// set: option values
+		
+		////////////////////////////////
+		if (arg_Map == null) {
+			
+			Ops.set_OptVals_Dflt();
+			
+		} else {
+			
+			Ops.set_OptVals(arg_Map);
+			
+		}
+		
+//		Set<String> keySet = arg_Map.keySet();
+//		
+//		for (String string : keySet) {
+//			
+//			String message = "key = " + string;
+//			String label = "["
+//					+ Thread.currentThread().getStackTrace()[1].getFileName()
+//					+ " : "
+//					+ Thread.currentThread().getStackTrace()[1].getMethodName()
+//					+ " : "
+//					+ Thread.currentThread().getStackTrace()[1].getLineNumber()
+//					+ "]";
+//			System.out.println(label + " " + message);
+//			
+//		}
 		
 		
 		

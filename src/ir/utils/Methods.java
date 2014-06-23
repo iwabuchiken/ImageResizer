@@ -201,17 +201,17 @@ public class Methods {
 //		String[] tokens = string.split(Pattern.quote(string));
 //		String[] tokens = string.split(string);
 		
-		String message = "string = " + string
-						+ " / "
-						+ "tokens.length = " + tokens.length;
-		String label = "["
-				+ Thread.currentThread().getStackTrace()[1].getFileName()
-				+ " : "
-				+ Thread.currentThread().getStackTrace()[1].getMethodName()
-				+ " : "
-				+ Thread.currentThread().getStackTrace()[1].getLineNumber()
-				+ "]";
-		System.out.println(label + " " + message);
+//		String message = "string = " + string
+//						+ " / "
+//						+ "tokens.length = " + tokens.length;
+//		String label = "["
+//				+ Thread.currentThread().getStackTrace()[1].getFileName()
+//				+ " : "
+//				+ Thread.currentThread().getStackTrace()[1].getMethodName()
+//				+ " : "
+//				+ Thread.currentThread().getStackTrace()[1].getLineNumber()
+//				+ "]";
+//		System.out.println(label + " " + message);
 		
 		
 		// tokens => 1?
@@ -228,19 +228,19 @@ public class Methods {
 			
 		}
 		
-		for (String s : tokens) {
-			
-			message = "token = " + s;
-			label = "["
-					+ Thread.currentThread().getStackTrace()[1].getFileName()
-					+ " : "
-					+ Thread.currentThread().getStackTrace()[1].getMethodName()
-					+ " : "
-					+ Thread.currentThread().getStackTrace()[1].getLineNumber()
-					+ "]";
-			System.out.println(label + " " + message);
-			
-		}
+//		for (String s : tokens) {
+//			
+//			String message = "token = " + s;
+//			String label = "["
+//					+ Thread.currentThread().getStackTrace()[1].getFileName()
+//					+ " : "
+//					+ Thread.currentThread().getStackTrace()[1].getMethodName()
+//					+ " : "
+//					+ Thread.currentThread().getStackTrace()[1].getLineNumber()
+//					+ "]";
+//			System.out.println(label + " " + message);
+//			
+//		}
 		
 		// 3<
 		return StringUtils.join(
