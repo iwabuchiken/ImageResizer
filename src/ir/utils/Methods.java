@@ -193,6 +193,22 @@ public class Methods {
 		System.out.println(label + " " + message);
 		
 	}
+	
+	public static void
+	message
+	(String message, String fileName, String methodName, int line) {
+		
+		String label = "["
+				+ fileName
+				+ " : "
+				+ methodName
+				+ " : "
+				+ line
+				+ "]";
+		
+		System.out.println(label + " " + message);
+		
+	}
 
 	public static String 
 	get_Trunk(String string, String marker) {

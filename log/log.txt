@@ -104,3 +104,12 @@
 [2014/06/23 23:07:36][Main.java : 101] 
 [2014/06/23 23:07:39][Main.java : 101] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png -size 40,40
 [2014/06/23 23:07:48][Main.java : 101] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png -size 40,40
+[2014/06/23 23:13:33][Main.java : 101] 
+[2014/06/23 23:14:22][Main.java : 101] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png -size 40,40
+[2014/06/23 23:15:35][Main.java : 101] 
+[2014/06/23 23:15:45][Main.java : 101] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png -size 40,40
+[2014/06/23 23:24:23][Main.java : 101] 
+[2014/06/23 23:24:30][Main.java : 101] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png -size 40,40
+[2014/06/23 23:24:38][Main.java : 101] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg -size 40,40
+[2014/06/23 23:25:01][Main.java : 101] 
+[2014/06/23 23:25:11][Main.java : 101] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg -size 40,40

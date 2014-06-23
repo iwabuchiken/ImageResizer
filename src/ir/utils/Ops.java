@@ -16,6 +16,10 @@ import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.math3.util.CombinatoricsUtils;
 
+import org.fusesource.jansi.AnsiConsole;
+import static org.fusesource.jansi.Ansi.*;
+import static org.fusesource.jansi.Ansi.Color.*;
+
 
 public class Ops {
 
@@ -382,14 +386,16 @@ public class Ops {
 		sb.append(marker);
 		sb.append(ext);
 		
-		String fname_Dst = sb.toString();
+		CONS.Main.fpath_Dst = sb.toString();
 		
-		CONS.Main.fpath_Dst = StringUtils.join(
-				new String[]{
-						CONS.Paths.dpath_Images,
-						fname_Dst
-				}, 
-				File.separator);
+//		String fname_Dst = sb.toString();
+//		
+//		CONS.Main.fpath_Dst = StringUtils.join(
+//				new String[]{
+//						CONS.Paths.dpath_Images,
+//						fname_Dst
+//				}, 
+//				File.separator);
 		
 	}//set_OptVals_Dflt__Dst()
 
@@ -454,9 +460,7 @@ public class Ops {
 		// -dst
 		
 		////////////////////////////////
-//		set_OptVals__Dst(arg_Map);
-		
-		
+		set_OptVals__Dst(arg_Map);
 		
 	}//set_OptVals
 
@@ -490,6 +494,72 @@ public class Ops {
 		} else {
 			
 			CONS.Main.fpath_Src = val;
+			
+		}
+		
+		/******************************
+			validate: File exists?
+		 ******************************/
+		File f = new File(CONS.Main.fpath_Src);
+		
+		if (!f.exists()) {
+			
+			AnsiConsole.systemInstall();
+
+			message = "Source file => doesn't exist: " + f.getAbsolutePath();
+			label = "["
+					+ Thread.currentThread().getStackTrace()[1].getFileName()
+					+ " : "
+					+ Thread.currentThread().getStackTrace()[1].getMethodName()
+					+ " : "
+					+ Thread.currentThread().getStackTrace()[1].getLineNumber()
+					+ "]";
+
+			System.out.print(label);
+			System.out.println(ansi().fg(RED).a(" " + message).reset());
+
+			AnsiConsole.systemUninstall();
+
+			System.exit(-1);
+			
+		}
+		
+		return;
+		
+	}//set_OptVals__Src
+	
+	private static void
+	set_OptVals__Dst
+	(HashMap<String, String> arg_Map) {
+		// TODO Auto-generated method stub
+//		"-size",
+//		"-src",
+//		"-dst"
+		
+		String val = arg_Map.get(CONS.Admin.param_Keys[2]);
+		
+		String message = "val => " + val;
+		String label = "["
+				+ Thread.currentThread().getStackTrace()[1].getFileName()
+				+ " : "
+				+ Thread.currentThread().getStackTrace()[1].getMethodName()
+				+ " : "
+				+ Thread.currentThread().getStackTrace()[1].getLineNumber()
+				+ "]";
+		System.out.println(label + " " + message);
+		
+		////////////////////////////////
+		
+		// set
+		
+		////////////////////////////////
+		if (val == null) {
+			
+			Ops.set_OptVals_Dflt__Dst();
+			
+		} else {
+			
+			CONS.Main.fpath_Dst = val;
 			
 		}
 		
