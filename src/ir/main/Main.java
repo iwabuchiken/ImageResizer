@@ -2,7 +2,8 @@ package ir.main;
 
 import ir.utils.CONS;
 import ir.utils.Methods;
-import ir.utils.Ops;
+import ir.utils.Options;
+import ir.utils.Resize;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -18,8 +19,8 @@ import javax.imageio.ImageIO;
 
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang.StringUtils;
-
 import org.fusesource.jansi.AnsiConsole;
+
 import static org.fusesource.jansi.Ansi.*;
 import static org.fusesource.jansi.Ansi.Color.*;
 
@@ -39,6 +40,40 @@ public class Main {
 		////////////////////////////////
 		_Setup_OptVals__Report();
 
+		////////////////////////////////
+
+		// resize
+
+		////////////////////////////////
+		boolean res = Resize.resize();
+		
+		if (res == true) {
+			
+			String message = "resized/saved";
+			String label = "["
+					+ Thread.currentThread().getStackTrace()[1].getFileName()
+					+ " : "
+					+ Thread.currentThread().getStackTrace()[1].getMethodName()
+					+ " : "
+					+ Thread.currentThread().getStackTrace()[1].getLineNumber()
+					+ "]";
+			System.out.println(label + " " + message);
+			
+		} else {
+
+			String message = "resize => not done";
+			String label = "["
+					+ Thread.currentThread().getStackTrace()[1].getFileName()
+					+ " : "
+					+ Thread.currentThread().getStackTrace()[1].getMethodName()
+					+ " : "
+					+ Thread.currentThread().getStackTrace()[1].getLineNumber()
+					+ "]";
+			System.out.println(label + " " + message);
+			
+		}
+		
+		
 //		_test_SizeRegex();
 		
 		
@@ -270,7 +305,7 @@ public class Main {
 
 		////////////////////////////////
 		HashMap<String, String> arg_Map = 
-							Ops.get_ArgMap(args);
+							Options.get_ArgMap(args);
 		
 		if (arg_Map == null) {
 			
@@ -303,7 +338,7 @@ public class Main {
 					+ "]";
 			System.out.println(label + " " + message);
 			
-			Ops.set_OptVals_Dflt();
+			Options.set_OptVals_Dflt();
 			
 		} else {
 
@@ -317,7 +352,7 @@ public class Main {
 					+ "]";
 			System.out.println(label + " " + message);
 
-			Ops.set_OptVals(arg_Map);
+			Options.set_OptVals(arg_Map);
 			
 		}
 		
@@ -395,7 +430,7 @@ public class Main {
 		
 		////////////////////////////////
 		HashMap<String, String> arg_Map = 
-				Ops.get_ArgMap(args);
+				Options.get_ArgMap(args);
 		
 		if (arg_Map == null) {
 			
@@ -420,11 +455,11 @@ public class Main {
 		////////////////////////////////
 		if (arg_Map == null) {
 			
-			Ops.set_OptVals_Dflt();
+			Options.set_OptVals_Dflt();
 			
 		} else {
 			
-			Ops.set_OptVals(arg_Map);
+			Options.set_OptVals(arg_Map);
 			
 		}
 		

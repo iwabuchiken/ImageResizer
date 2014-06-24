@@ -21,7 +21,7 @@ import static org.fusesource.jansi.Ansi.*;
 import static org.fusesource.jansi.Ansi.Color.*;
 
 
-public class Ops {
+public class Options {
 
 	public static void open_ImageWindow() {
 		// TODO Auto-generated method stub
@@ -75,17 +75,17 @@ public class Ops {
 //			"-size",	0
 			if (args[i].equals(CONS.Admin.param_Keys[0])) {
 				
-				i = Ops.get_ArgMap__Size(args, i, len_Arg, arg_Map);
+				i = Options.get_ArgMap__Size(args, i, len_Arg, arg_Map);
 			
 //			"-src",		1
 			} else if (args[i].equals(CONS.Admin.param_Keys[1])) {
 				
-				i = Ops.get_ArgMap__Src(args, i, len_Arg, arg_Map);
+				i = Options.get_ArgMap__Src(args, i, len_Arg, arg_Map);
 				
 //			"-dst"		2
 			} else if (args[i].equals(CONS.Admin.param_Keys[2])) {
 				
-				i = Ops.get_ArgMap__Dst(args, i, len_Arg, arg_Map);
+				i = Options.get_ArgMap__Dst(args, i, len_Arg, arg_Map);
 				
 			} else {
 				
@@ -489,7 +489,7 @@ public class Ops {
 		////////////////////////////////
 		if (val == null) {
 			
-			Ops.set_OptVals_Dflt__Src();
+			Options.set_OptVals_Dflt__Src();
 			
 		} else {
 			
@@ -555,7 +555,7 @@ public class Ops {
 		////////////////////////////////
 		if (val == null) {
 			
-			Ops.set_OptVals_Dflt__Dst();
+			Options.set_OptVals_Dflt__Dst();
 			
 		} else {
 			
@@ -591,7 +591,7 @@ public class Ops {
 		////////////////////////////////
 		if (val == null) {
 			
-			Ops.set_OptVals_Dflt__Size();
+			Options.set_OptVals_Dflt__Size();
 			
 		} else {
 			

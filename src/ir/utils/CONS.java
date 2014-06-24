@@ -27,6 +27,7 @@ public class CONS {
 		};
 		
 		public static final String pathSeparator = "/";
+//		public static final String pathSeparator = "\\";
 		
 	}//public static class Admin
 
