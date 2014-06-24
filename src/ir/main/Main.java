@@ -32,6 +32,13 @@ public class Main {
 		
 		_Setup_OptVals(args);
 		
+		////////////////////////////////
+
+		// report
+
+		////////////////////////////////
+		_Setup_OptVals__Report();
+
 //		_test_SizeRegex();
 		
 		
@@ -313,13 +320,6 @@ public class Main {
 			Ops.set_OptVals(arg_Map);
 			
 		}
-		
-		////////////////////////////////
-
-		// report
-
-		////////////////////////////////
-		_Setup_OptVals__Report();
 		
 	}//_Setup_OptVals(String[] args)
 	
