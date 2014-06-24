@@ -123,3 +123,6 @@
 [2014/06/24 12:13:59][Main.java : 143] 
 [2014/06/24 12:14:23][Main.java : 143] 
 [2014/06/24 12:15:02][Main.java : 143] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png -size 20,20
+[2014/06/24 12:21:22][Main.java : 143] 
+[2014/06/24 12:21:48][Main.java : 143] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png -size 20,20
+[2014/06/24 12:22:02][Main.java : 143] -src C:\WORKS\WS\Eclipse_Kepler\ImageResizer\images\200px-Lactose.svg.png -size 50,50

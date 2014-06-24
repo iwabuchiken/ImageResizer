@@ -49,16 +49,34 @@ public class Resize {
 		
 		try {
 			
-			BufferedImage originalImage = ImageIO.read(f_Src);
+			BufferedImage origImg = ImageIO.read(f_Src);
 //			BufferedImage originalImage = ImageIO.read(new File(fname));
 			
-			int type = originalImage.getType() == 0? 
-					BufferedImage.TYPE_INT_ARGB : originalImage.getType();
+			// get: size
+			int orig_Height = origImg.getHeight();
+			int orig_Width = origImg.getWidth();
 			
-			BufferedImage resizedImage = new BufferedImage(100, 100, type);
+			int type = origImg.getType() == 0? 
+					BufferedImage.TYPE_INT_ARGB : origImg.getType();
+			
+			
+			
+			BufferedImage resizedImage = 
+							new BufferedImage(
+										orig_Width * CONS.Main.resizePercent[0] / 100, 
+										orig_Height * CONS.Main.resizePercent[1] / 100, 
+										type);
 			
 			Graphics2D g = resizedImage.createGraphics();
-			g.drawImage(originalImage, 0, 0, 100, 100, null);
+			g.drawImage(
+					origImg, 
+					0, 0, 
+					orig_Width * CONS.Main.resizePercent[0] / 100, 
+					orig_Height * CONS.Main.resizePercent[1] / 100, 
+//					100, 
+//					100, 
+					null);
+			
 			g.dispose();
 			
 			ImageIO.write(
